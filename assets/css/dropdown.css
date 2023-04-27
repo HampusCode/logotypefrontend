@@ -1,0 +1,406 @@
+.menu {
+  list-style: none;
+  margin: 5% 0 0 0; /* Add a top margin of 50px */
+  padding: 0;
+  background-color: #ffffff;
+  height: 10%;
+}
+
+@font-face {
+  font-family: 'Jumper-Regular';
+  src: url('/images/Jumper-Regular.otf') format("opentype");
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: -6%; /* Increase the left padding to move the menu icon more to the right */
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  height: 25%;
+  width: 100%;
+  z-index: 1;
+}
+
+.logo-container {
+  background-color: #fff;
+}
+
+
+
+.logo-image {
+  text-align: center;
+  margin: auto;
+  max-width: 100%;
+  transform: translateX(0%);
+  width: 70%;
+}
+
+.logo-image img {
+  width: 70%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .logo-image img {
+    width: 70%;
+  }
+}
+
+.main-header .logo {
+  font-size: 3.6vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0;
+}
+
+.main-header .logo-image {
+  height: auto;
+  display: block;
+  margin-left: 13%;
+}
+
+
+.menu-icon {
+  cursor: pointer;
+  position: relative;
+  left: 4%;
+  top: 0%;
+  
+}
+
+.menu-icon img {
+  width: 100%;
+  height: auto;
+  width: 80px; 
+  height: 80px;
+  object-fit: contain;
+}
+
+
+.menu-icon .menu-bars {
+  display: block;
+}
+
+.menu-icon .dropdown-arrow {
+  display: none;
+}
+
+.menu-icon.clicked .menu-bars {
+  display: none;
+}
+
+.menu-icon.clicked .dropdown-arrow {
+  display: block;
+}
+
+
+
+
+
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  left: -200%; /* Set the left property to the negative value of the left padding in the .main-header */
+  top: 100%;
+  width: 410px;
+  transition: display 0s, opacity 0.5s, top 0.5s, left 0s;
+  transition-delay: 0.5s;
+  border-radius: 5px;
+  font-family: "Jumper-Regular";
+  height: 100vh;
+  padding-left: 20px;
+}
+
+.dropdown-menu li {
+  margin: 0;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a {
+  font-size: 1.2rem;
+  display: block;
+  padding: 2px;
+  color: #0c0101;
+  text-decoration: none;
+  font-family: "Jumper-Regular";
+  text-align: center;
+}
+
+.dropdown-menu li:first-child {
+  margin-top: 40px;
+}
+
+.dropdown-menu li:last-child {
+  margin-bottom: 500px;
+}
+
+
+.menu-dropdown:focus .dropdown-menu {
+  display: block;
+  opacity: 1;
+  top: 100%;
+  left: 10%; /* Move the dropdown to the left */
+}
+
+.dropdown-menu {
+  display: none;
+}
+
+
+#dropdown-arrow {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+
+
+.menu-icon {
+  cursor: pointer;
+  position: relative;
+  left: 4%;
+  top: 0%;
+}
+
+
+.menu-icon-image {
+  width: 30px;
+  height: 30px;
+  background-image: url('bars.png'); /* set initial background image */
+  background-repeat: no-repeat;
+}
+
+.menu-icon.clicked .menu-icon-image {
+  background-image: url('arrowdropdown.png'); /* set background image when clicked */
+}
+
+.dropdown-arrow{
+  width: 30px;
+  height: 30px;
+  display: none;
+  margin-right: 10px;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.ui {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: "Jumper-Regular";
+}
+
+.input{
+  position: absolute;
+  padding: 10px;
+  left: 7%;
+}
+
+.submit {
+  position: absolute;
+  top: -5%;
+  right: -30%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.input-wrapper {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.options {
+  width: 80px;
+  position: relative;
+  cursor: pointer;
+  right: -30%
+  
+}
+
+#options-text {
+  display: inline-block;
+  
+}
+
+#options-text:after {
+  content: "+";
+}
+
+#options-text.changed:after {
+  content: ":";
+}
+
+
+@media (max-width: 768px) {
+  .main-header {
+    position: relative;
+    height: auto;
+  }
+  .logo-image img {
+    width: 70%;
+  }
+  .menu-icon {
+    display: block;
+  }
+  .menu-dropdown {
+    position: static;
+    padding: 0;
+  }
+  .dropdown-menu {
+    display: block;
+    position: static;
+    opacity: 1;
+    top: auto;
+    left: auto;
+    padding: 0;
+    border-radius: 0;
+  }
+}
+
+.dropdown-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -10%;
+  z-index: 3;
+  padding: 8px;
+  min-width: 150px;
+}
+
+
+#dropOp.show {
+  display: block;
+  background-color: transparent;
+}
+
+
+/* Add this line to make sure the dropdown menu is not overlapped by other elements */
+.dropdown-options li {
+  margin: 0;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.dropdown-options li a {
+  font-size: 1.2rem;
+  display: block;
+  padding: 2px;
+  color: #0c0101;
+  text-decoration: none;
+  font-family: "Jumper-Regular";
+  text-align: center;
+}
+
+.dropdown-options li:first-child {
+  margin-top: 40px;
+}
+
+.dropdown-options li:last-child {
+  margin-bottom: 500px;
+}
+.show .dropdown-options {
+  z-index: 9;
+}
+
+.dropdown-options ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-options li {
+  margin-bottom: 8px;
+} 
+
+.dropdown-options input[type="checkbox"] {
+  margin-right: 5px;
+  transform: scale(1.5);
+}
+
+.dropdown-options label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.dropdown-options ul li {
+  color: #000000;
+}
+
+input[type=checkbox] {
+  accent-color: black;
+}
+
+input[type=color]{
+  border: none;
+  width: 40px;
+  height: 30px;
+}
+
+#color-text{
+position:relative;
+left: 20%;
+}
+
+.boxes{
+  position:absolute;
+  top: 80%;
+  left: 0%;
+}
+
+#my-input {
+  font-family: Jumper-Regular, sans-serif;
+  font-size: 16px;
+}
+
+
+
+#popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  font-family: Jumper-Regular, sans-serif;
+}
+
+#popup form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+#popup form label,
+#popup form input[type="submit"] {
+  display: block;
+  margin-bottom: 20px;
+  font-family: Jumper-Regular, sans-serif;
+}
+
+#popup form input[type="text"],
+#popup form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  font-family: Jumper-Regular, sans-serif;
+}

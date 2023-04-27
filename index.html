@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Centered Banner Example</title>
+	<link href="assets/css/dropdown.css" rel="stylesheet">
+	<link href="assets/css/font.css" rel="stylesheet">
+	<style>
+        .main-content {
+            background-color: #F2F2F2;
+            height: 100vh;
+        }
+
+        
+	</style>
+  <script src="assets/js/dropdown-options.js"></script>
+  <script>
+    window.onload = function() {
+        document.getElementById('popup').style.display = 'block';
+    };
+
+</script>
+</head>
+<body>
+    <header class="main-header clearfix" role="header">
+        <div class="menu-icon" tabindex="0" id="menu-icon">
+          <div class="clickable">
+          <img src="images/bars.png" alt="Menu Image" class="menu-bars"> 
+          <img src="images/arrowdropdown.png" alt="Dropdown Arrow" class="dropdown-arrow">
+          </div>
+            <div class="menu-dropdown">
+            <ul class="dropdown-menu">
+              <li><a href="#section1">Start</a></li>
+              <li><a href="#section2">Create logo</a></li>
+              <li><a href="#section3">My projects</a></li>
+              <li><a href="#section4">Saved logos</a></li>
+              <li><a href="#section5" id="about-link">About</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="logo-container">
+        <div class="logo-image">
+          <img src="images/bannerpicture1.png" alt="Logo Image">
+        </div>
+        </div>
+
+    </header>
+    <!-- <div id="popup" style="text-align: center;">
+      <div style="background-color: #f0f0f0; width: 700px; height: 700px; margin: 0 auto;">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdrAdfj_MG4MpXBvb30KD8W2J-YO-1WuYrIFMfEVVCNw61gWA/viewform?embedded=true" width="700" height="700" frameborder="0" marginheight="0" marginwidth="0">Läser in …</iframe>
+      </div>
+    </div> -->
+
+
+    <div class="main-content">
+      <div class="ui">
+        <p>Tell me what your logo should depict.</p>
+        <div class="input">
+          <div class="input-container">
+            <div class="input-wrapper">
+              <form>
+                <input type="text" id="my-input" name="my-input"> 
+                <img src="images/submit.png" alt="Submit" class="submit">
+              </form>
+            </div>
+            <div class="options" onclick="toggleOptionsDropdown(event)">
+              <p id="options-text">Options</p>
+              <div class="dropdown-options" id="dropOp">
+                <ul>
+                  <li>
+                    <label>
+                      <input type="checkbox" name="option1" value="option1">
+                      <span>detailed</span>
+                    </label>
+                  </li>
+                  <li>                    
+                    <label>
+                    <input type="checkbox" name="option2" value="option2">
+                    <span>geometric</span>
+                  </label></li>
+                  <li>                    
+                    <label>
+                    <input type="checkbox" name="option3" value="option3">
+                    <span>realistic</span>
+                  </label>
+                </li>
+                <p id="color-text">color:</p>
+                <div class="boxes">
+                <li>                    
+                  <label>
+                  <input type="color" name="option4" value="option3">
+                  <span>preview</span>
+                  </label>
+                </li>
+                <li>                    
+                  <label>
+                  <input type="color" name="option5" value="option5">
+                  <span>background</span>
+                  </label>
+                </div>
+                </li>
+                </ul>
+              </div>
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="assets/js/dropdown.js"></script>
+</body>
+</html>
